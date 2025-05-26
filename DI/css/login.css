@@ -1,0 +1,114 @@
+/* Reset básico */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(120deg, #181c24 0%, #23293a 100%);
+    min-height: 100vh;
+    color: #f3f4f6;
+}
+
+.header {
+    text-align: center;
+    padding: 2rem 0 1rem 0;
+}
+
+.header img.logo {
+    max-width: 420px;
+    margin: 0 auto;
+    display: block;
+}
+
+.produtos-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+#login-form {
+    background: #23293a;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.25), 0 1.5px 6px rgba(0,0,0,0.12);
+    padding: 2.5rem 2rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 350px;
+}
+
+#login-form label {
+    font-size: 1rem;
+    color: #f3f4f6;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+#login-form input[type="text"],
+#login-form input[type="password"] {
+    padding: 0.7rem 1rem;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #181c24;
+    color: #f3f4f6;
+    transition: border 0.2s, background 0.2s;
+}
+
+#login-form input[type="text"]:focus,
+#login-form input[type="password"]:focus {
+    border: 1.5px solid #60a5fa;
+    outline: none;
+    background: #23293a;
+}
+
+.add-btn {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 0;
+    font-size: 1.08rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+}
+
+.add-btn:hover, .add-btn:focus {
+    background: #1746a2;
+}
+
+#login-erro {
+    color: #ef4444;
+    font-size: 0.98rem;
+    text-align: center;
+    margin-top: -0.5rem;
+    display: none;
+}
+
+.footer {
+    text-align: center;
+    padding: 1.5rem 0 0.5rem 0;
+    color: #888;
+    font-size: 1rem;
+    background: none;
+    letter-spacing: 0.5px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: transparent;
+}
+
+@media (max-width: 500px) {
+    #login-form {
+        padding: 1.2rem 0.7rem;
+    }
+    .header img.logo {
+        max-width: 90px;
+    }
+}

@@ -249,3 +249,28 @@ body.dark-mode .footer {
     color: #f0f4f8;
     border-top: 1px solid #33373d;
 }
+
+#logout-btn {
+    border:solid 1px #888;
+    background-color:#1e293b;
+    color:#888;
+    cursor:pointer;
+    font-size:0.92rem;
+    text-decoration:none;
+    padding:0.18rem 0.7rem;
+    border-radius:999px;
+    transition:background 0.2s, color 0.2s;
+}
+
+#logout-btn:hover, #logout-btn:focus{
+    background-color:#888;
+    color:#1e293b;
+}
+
+.usuario-logado{
+    font-size: 8;
+    margin-left:auto;
+    display:flex;
+    align-items:center;
+    gap:1rem;
+}
