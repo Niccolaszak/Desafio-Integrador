@@ -116,11 +116,12 @@ body.dark-mode .side-bar .sidebar-btn:focus {
 .produtos-section {
     margin: 2rem 2rem 2rem 200px; 
     margin-left: 20px;
-    background: #f3f4f6; 
+    background: #f0f4f8; 
     color: #222;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
     padding: 2rem;
+    min-height: 70vh; /* garante que a seção ocupe toda a altura da tela */
 }
 
 body.dark-mode .produtos-section {
@@ -229,4 +230,25 @@ body.dark-mode .produtos-table tbody tr {
 .remove-btn:hover,
 .remove-btn:focus {
     background: #b91c1c;
+}
+
+.footer {
+    background-color: #1e293b;
+    color: #f0f4f8;
+    padding: 22px 20px 10px 220px; /* alinhado com a sidebar */
+    text-align: center;
+    font-size: 1rem;
+    border-top: 1px solid #cbd5e1;
+    margin-top: 2rem;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.5px;
+}
+
+body.dark-mode .footer {
+    background-color: #1e293b;
+    color: #f0f4f8;
+    border-top: 1px solid #33373d;
 }

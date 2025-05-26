@@ -37,7 +37,36 @@ document.getElementById('form-add-livro').addEventListener('submit', function(e)
     }
 
     let livros = JSON.parse(localStorage.getItem('livros')) || [];
-    let novoId = livros.length > 0 ? Math.max(...livros.map(l => l.id)) + 1 : 1;
+    // Verifica se já existe um livro com mesmo título, autor e gênero (case insensitive)
+    const idxExistente = livros.findIndex(l =>
+        l.titulo.trim().toLowerCase() === titulo.toLowerCase() &&
+        l.autor.trim().toLowerCase() === autor.toLowerCase() &&
+        l.genero.trim().toLowerCase() === genero.toLowerCase()
+    );
+
+    if (idxExistente !== -1) {
+        const confirmar = confirm(
+            'Já existe um livro com esse título, autor e gênero.\nDeseja adicionar a quantidade ao livro já existente?'
+        );
+        if (confirmar) {
+            livros[idxExistente].quantidade += quantidade;
+            localStorage.setItem('livros', JSON.stringify(livros));
+            window.location.href = "index.html";
+        }
+        return;
+    }
+
+    // Encontra o menor ID disponível
+    let novoId = 1;
+    const idsUsados = livros.map(l => l.id).sort((a, b) => a - b);
+    for (let i = 0; i < idsUsados.length; i++) {
+        if (idsUsados[i] !== i + 1) {
+            novoId = i + 1;
+            break;
+        }
+        // Se todos os anteriores estão ocupados, novoId será o próximo
+        novoId = idsUsados.length + 1;
+    }
 
     livros.push({
         id: novoId,
