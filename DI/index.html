@@ -7,7 +7,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <!-- Header -->
+    <header class="header">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema claro/escuro">🌙</button>
+    </header>
+    <section class="side-bar">
+        <h1 class="header-title">Produtos+</h1>
+        <div class="sidebar-options">
+            <a href="index.html"><button class="sidebar-btn">Produtos</button></a>
+            <a href="index.html"><button class="sidebar-btn">Dashboard</button></a>
+        </div>
+    </section>
+    <section class="produtos-section">
+        <div class="produtos-header">
+            <h2>Livros em Estoque</h2>
+            <a href="addProduto.html"><button class="add-btn" id="add-livro-btn">Adicionar Livro</button></a>
+        </div>
+        <table class="produtos-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Gênero</th>
+                    <th>Quantidade</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- O conteúdo será inserido dinamicamente pelo JS -->
+            </tbody>
+        </table>
+    </section>
 </body>
-<script src="script.js"></script>
+<script src="index.js"></script>
 </html>

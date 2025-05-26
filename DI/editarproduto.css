@@ -1,0 +1,78 @@
+.produtos-section form {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: 2rem;
+    margin-top: 1rem;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+body.dark-mode .produtos-section form {
+    background: #1a1e24;
+    color: #f0f4f8;
+}
+
+.produtos-section form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    color: #222;
+    gap: 0.5rem;
+}
+
+.produtos-titulo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+body.dark-mode .produtos-titulo{
+    color: #2563eb;
+}
+
+body.dark-mode .produtos-section form label {
+    color: #f0f4f8;
+}
+
+.produtos-section form input[type="text"],
+.produtos-section form input[type="number"] {
+    padding: 0.5rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    background: #f8fafc;
+    color: #222;
+    transition: border 0.2s;
+}
+
+body.dark-mode .produtos-section form input[type="text"],
+body.dark-mode .produtos-section form input[type="number"] {
+    background: #181a1b;
+    color: #f0f4f8;
+    border: 1px solid #33373d;
+}
+
+.produtos-section form input[type="text"]:focus,
+.produtos-section form input[type="number"]:focus {
+    border: 1.5px solid #2563eb;
+    outline: none;
+}
+
+.produtos-section form .add-btn {
+    align-self: flex-end;
+    margin-top: 1rem;
+}
+
+@media (max-width: 600px) {
+    .produtos-section form {
+        padding: 1rem;
+        max-width: 100%;
+    }
+}
