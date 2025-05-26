@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema claro/escuro">🌙</button>
+    </header>
+    <section class="side-bar">
+        <h1 class="header-title">Produtos+</h1>
+        <div class="sidebar-options">
+            <a href="index.html"><button class="sidebar-btn">Produtos</button></a>
+            <a href="dashboard.html"><button class="sidebar-btn">Dashboard</button></a>
+        </div>
+    </section>
+    <section class="produtos-section">
+        <div class="produtos-header">
+            <h2>Dashboard do Estoque</h2>
+        </div>
+        <div id="dashboard-cards" style="display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem;"></div>
+        <div id="maior-estoque-card" style="margin-bottom:2rem;"></div>
+        <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
+            <div style="flex:1; min-width:320px;">
+                <h3 style="text-align:center;">Top 10 - Maior Estoque</h3>
+                <canvas id="grafico-maiores" width="400" height="250"></canvas>
+            </div>
+            <div style="flex:1; min-width:320px;">
+                <h3 style="text-align:center;">Top 10 - Menor Estoque</h3>
+                <canvas id="grafico-menores" width="400" height="250"></canvas>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
