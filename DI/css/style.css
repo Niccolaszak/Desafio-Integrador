@@ -28,7 +28,7 @@ body.dark-mode {
 
 .logo {
     margin-top: 0;
-    padding-top: 0;
+    padding-top: 10px;
     height: auto;
     width: 215px;    
 }
