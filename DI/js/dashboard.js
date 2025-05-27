@@ -71,12 +71,12 @@ function renderDashboard() {
     // Top 10 maiores estoques
     const maiores = [...livros]
         .sort((a, b) => b.quantidade - a.quantidade)
-        .slice(0, 10);
+        .slice(0, 7);
 
     // Top 10 menores estoques
     const menores = [...livros]
         .sort((a, b) => a.quantidade - b.quantidade)
-        .slice(0, 10);
+        .slice(0, 7);
 
     // Gráfico dos 10 maiores estoques
     const ctxMaiores = document.getElementById('grafico-maiores').getContext('2d');
