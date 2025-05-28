@@ -20,10 +20,8 @@ body, html {
     display: block;
 }
 
-.produtos-section {
+main {
     display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 60vh;
 }
 
@@ -37,6 +35,7 @@ body, html {
     gap: 1.5rem;
     width: 100%;
     max-width: 350px;
+    margin: auto;
 }
 
 #login-form label {
@@ -105,8 +104,9 @@ body, html {
 }
 
 @media (max-width: 500px) {
-    #login-form {
-        padding: 1.2rem 0.7rem;
+    main{
+        padding: 0;
+        margin: 0;;
     }
     .header img.logo {
         max-width: 90px;
