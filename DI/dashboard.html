@@ -7,18 +7,23 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="header">
+     <header class="header">
+        <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu lateral">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <a href="index.html"><img src="./Imagens/imgLogo.png" alt="Logo Produtos+" class="logo"></a>
         <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema claro/escuro">🌙</button>
-        <div id="usuario-logado-info" class="usuario-logado">
+    </header>
+    <section class="side-bar" id="side-bar" aria-label="Menu lateral">
+        <div id="usuario-logado-info" class="usuario-logado" style="padding: 1.5rem 1rem 1rem 1rem; border-bottom: 1px solid #374151;">
             <span id="usuario-logado-nome"></span>
             <button id="logout-btn">Sair</button>
         </div>
-    </header>
-    <section class="side-bar" aria-label="Menu lateral">
-        <img src="./Imagens/imgLogo.png" alt="Logo Produtos+" class="logo">
         <nav class="sidebar-options" aria-label="Navegação principal">
             <a href="index.html"><button class="sidebar-btn">Produtos</button></a>
-            <a href="dashboard.html" aria-current="page"><button class="sidebar-btn">Dashboard</button></a>
+            <a href="dashboard.html"><button class="sidebar-btn">Dashboard</button></a>
         </nav>
     </section>
     <main>

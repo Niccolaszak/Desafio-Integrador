@@ -90,6 +90,31 @@ function renderTabelaLivros() {
     });
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('side-bar');
+
+    if (menuToggle && sidebar) {
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('aberta');
+            document.body.classList.toggle('menu-aberto');
+        });
+
+        // Fecha a sidebar ao clicar fora dela (opcional)
+        document.addEventListener('click', (e) => {
+            if (
+                sidebar.classList.contains('aberta') &&
+                !sidebar.contains(e.target) &&
+                e.target !== menuToggle &&
+                !menuToggle.contains(e.target)
+            ) {
+                sidebar.classList.remove('aberta');
+                document.body.classList.remove('menu-aberto');
+            }
+        });
+    }
+});
+
 
 
 
