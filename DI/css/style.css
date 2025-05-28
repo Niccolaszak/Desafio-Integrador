@@ -1,3 +1,19 @@
+html, body {
+    height: 100%;
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 0 auto;
+    width: 100%;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f4f8;
@@ -19,7 +35,8 @@ body.dark-mode {
     padding: 1rem 2vw;
     background: #1e293b;
     color: #f0f4f8;
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0;
     z-index: 1000;
 }
@@ -202,7 +219,7 @@ body.dark-mode .theme-toggle {
         padding: 1rem 0.5rem 0.7rem 0.5rem !important;
     }
     .produtos-section {
-        margin: 1rem 0.3rem !important;
+        margin: 2rem 0.3rem !important;
         padding: 1rem !important;
         min-height: 40vh;
     }
@@ -231,6 +248,7 @@ body.dark-mode .theme-toggle {
         min-width: 600px; /* ou o valor mínimo necessário para não quebrar */
         width: 100%;
     }
+
 }
 
 .produtos-section {
@@ -365,6 +383,9 @@ body.dark-mode .produtos-table tbody tr {
     align-items: center;
     justify-content: center;
     letter-spacing: 0.5px;
+    position: relative;
+    bottom: 0;
+    z-index: 1000;
 }
 
 body.dark-mode .footer {
@@ -409,5 +430,31 @@ button:focus, .sidebar-btn:focus, .add-btn:focus, a:focus {
     #dashboard-cards {
         flex-direction: column !important;
         gap: 1rem !important;
+    }
+}
+
+@media (max-width: 700px) {
+    .header {
+        padding: 0.7rem 0.2rem !important;
+    }
+    .produtos-section {
+        margin: 0.5rem 0.1rem;
+        padding: 0.7rem 0.2rem;
+        min-height: 75vh;
+    }
+    main {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100vw !important;
+        box-sizing: border-box !important;
+    }
+    body {
+        padding: 0 !important;
+    }
+    .footer {
+        padding: 10px 2px 6px 2px !important;
+        font-size: 0.92rem;
+        width: 100vw !important;
+        left: 0 !important;
     }
 }
