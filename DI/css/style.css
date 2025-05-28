@@ -118,7 +118,7 @@ body.dark-mode .side-bar .sidebar-btn:focus {
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.5);
     padding: 2rem;
-    min-height: 70vh; /* garante que a seção ocupe toda a altura da tela */
+    min-height: 62.5vh;
 }
 
 body.dark-mode .produtos-section {
@@ -273,4 +273,10 @@ body.dark-mode .footer {
     display:flex;
     align-items:center;
     gap:1rem;
+}
+
+/* Foco visível para botões e links */
+button:focus, .sidebar-btn:focus, .add-btn:focus, a:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
 }

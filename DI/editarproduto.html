@@ -15,40 +15,39 @@
             <button id="logout-btn">Sair</button>
         </div>
     </header>
-    <section class="side-bar">
+    <section class="side-bar" aria-label="Menu lateral">
         <img src="./Imagens/imgLogo.png" alt="Logo Produtos+" class="logo">
-        <div class="sidebar-options">
+        <nav class="sidebar-options" aria-label="Navegação principal">
             <a href="index.html"><button class="sidebar-btn">Produtos</button></a>
-            <a href="index.html"><button class="sidebar-btn">Dashboard</button></a>
-        </div>
+            <a href="dashboard.html"><button class="sidebar-btn">Dashboard</button></a>
+        </nav>
     </section>
-    <section class="produtos-section">
-        <div class="produtos-titulo">
-            <h2>Editar Livro</h2>
-        </div>
-        <form id="form-editar-livro" autocomplete="off">
-            <div style="display: flex; flex-direction: column; gap: 1rem; max-width: 400px;">
-                <label>
-                    Título:
-                    <input type="text" name="titulo" required>
-                </label>
-                <label>
-                    Autor:
-                    <input type="text" name="autor" required>
-                </label>
-                <label>
-                    Gênero:
-                    <input type="text" name="genero" required>
-                </label>
-                <label>
-                    Quantidade em estoque:
-                    <input type="number" name="quantidade" min="1" required>
-                </label>
-                <button type="submit" class="add-btn">Salvar Alterações</button>
+    <main>
+        <h1 style="margin: 0 0 0 1em; padding-top: 1em;">Editar Livro</h1>
+        <section class="produtos-section" aria-labelledby="editar-livro-titulo">
+            <div class="produtos-titulo">
+                <h2 id="editar-livro-titulo">Formulário de Edição</h2>
             </div>
-        </form>
-    </section>
-    <footer class="footer">
+            <form id="form-editar-livro" autocomplete="off">
+                <div style="display: flex; flex-direction: column; gap: 1rem; max-width: 400px;">
+                    <label for="titulo">Título:
+                        <input type="text" id="titulo" name="titulo" required>
+                    </label>
+                    <label for="autor">Autor:
+                        <input type="text" id="autor" name="autor" required>
+                    </label>
+                    <label for="genero">Gênero:
+                        <input type="text" id="genero" name="genero" required>
+                    </label>
+                    <label for="quantidade">Quantidade em estoque:
+                        <input type="number" id="quantidade" name="quantidade" min="1" required>
+                    </label>
+                    <button type="submit" class="add-btn">Salvar Alterações</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer class="footer" role="contentinfo">
         &copy; 2025 Estoque de Livros. Todos os direitos reservados.
     </footer>
     <script src="js/editarproduto.js"></script>

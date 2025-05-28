@@ -14,31 +14,34 @@
             <button id="logout-btn">Sair</button>
         </div>
     </header>
-    <section class="side-bar">
+    <section class="side-bar" aria-label="Menu lateral">
         <img src="./Imagens/imgLogo.png" alt="Logo Produtos+" class="logo">
-        <div class="sidebar-options">
+        <nav class="sidebar-options" aria-label="Navegação principal">
             <a href="index.html"><button class="sidebar-btn">Produtos</button></a>
-            <a href="dashboard.html"><button class="sidebar-btn">Dashboard</button></a>
-        </div>
+            <a href="dashboard.html" aria-current="page"><button class="sidebar-btn">Dashboard</button></a>
+        </nav>
     </section>
-    <section class="produtos-section">
-        <div class="produtos-header">
-            <h2>Dashboard do Estoque</h2>
-        </div>
-        <div id="dashboard-cards" style="display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem;"></div>
-        <div id="maior-estoque-card" style="margin-bottom:2rem;"></div>
-        <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
-            <div style="flex:1; min-width:320px;">
-                <h3 style="text-align:center;">Top 10 - Maior Estoque</h3>
-                <canvas id="grafico-maiores" width="400" height="250"></canvas>
+    <main>
+        <h1 style="margin: 0 0 0 1em; padding-top: 1em;">Dashboard do Estoque</h1>
+        <section class="produtos-section" aria-labelledby="dashboard-titulo">
+            <div class="produtos-header">
+                <h2 id="dashboard-titulo">Indicadores e Gráficos</h2>
             </div>
-            <div style="flex:1; min-width:320px;">
-                <h3 style="text-align:center;">Top 10 - Menor Estoque</h3>
-                <canvas id="grafico-menores" width="400" height="250"></canvas>
+            <div id="dashboard-cards" style="display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem;"></div>
+            <div id="maior-estoque-card" style="margin-bottom:2rem;"></div>
+            <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
+                <div style="flex:1; min-width:320px;">
+                    <h3 style="text-align:center;">Top 10 - Maior Estoque</h3>
+                    <canvas id="grafico-maiores" width="400" height="250"></canvas>
+                </div>
+                <div style="flex:1; min-width:320px;">
+                    <h3 style="text-align:center;">Top 10 - Menor Estoque</h3>
+                    <canvas id="grafico-menores" width="400" height="250"></canvas>
+                </div>
             </div>
-        </div>
-    </section>
-    <footer class="footer">
+        </section>
+    </main>
+    <footer class="footer" role="contentinfo">
         &copy; 2025 Estoque de Livros. Todos os direitos reservados.
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

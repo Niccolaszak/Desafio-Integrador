@@ -9,21 +9,23 @@
     <header class="header">
         <img src="./Imagens/imgLogo.png" alt="Logo Produtos+" class="logo">
     </header>
-    <section class="produtos-section">
-        <form id="login-form" style="max-width:350px;margin:2rem auto;display:flex;flex-direction:column;gap:1.5rem;">
-            <label>
-                Usuário:
-                <input type="text" name="usuario" required autocomplete="username">
-            </label>
-            <label>
-                Senha:
-                <input type="password" name="senha" required autocomplete="current-password">
-            </label>
-            <button type="submit" class="add-btn">Entrar</button>
-            <div id="login-erro" style="color:#ef4444;display:none;"></div>
-        </form>
-    </section>
-    <footer class="footer">
+    <main>
+        <section class="produtos-section">
+            <form id="login-form" style="max-width:350px;margin:2rem auto;display:flex;flex-direction:column;gap:1.5rem;">
+                <label for="usuario">
+                    Usuário:
+                    <input type="text" id="usuario" name="usuario" required autocomplete="username">
+                </label>
+                <label for="senha">
+                    Senha:
+                    <input type="password" id="senha" name="senha" required autocomplete="current-password">
+                </label>
+                <button type="submit" class="add-btn">Entrar</button>
+                <div id="login-erro" style="color:#ef4444;display:none;" role="alert"></div>
+            </form>
+        </section>
+    </main>
+    <footer class="footer" role="contentinfo">
         &copy; 2025 Estoque de Livros. Todos os direitos reservados.
     </footer>
     <script src="js/login.js"></script>
