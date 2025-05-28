@@ -444,9 +444,10 @@ button:focus, .sidebar-btn:focus, .add-btn:focus, a:focus {
     }
     main {
         padding: 0 !important;
-        margin: 0 !important;
+        margin: 30px !important;
         width: 100vw !important;
         box-sizing: border-box !important;
+        
     }
     body {
         padding: 0 !important;
