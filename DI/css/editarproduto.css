@@ -70,9 +70,12 @@ body.dark-mode .produtos-section form input[type="number"] {
     margin-top: 1rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 620px) {
     .produtos-section form {
         padding: 1rem;
-        max-width: 100%;
+        min-width: 0;
+    }
+    .produtos-titulo {
+        font-size: 1.1rem;
     }
 }

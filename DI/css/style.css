@@ -167,6 +167,72 @@ body.dark-mode .theme-toggle {
     }
 }
 
+/* Responsividade para telas menores que 620px */
+@media (max-width: 620px) {
+    .header {
+        flex-direction: row;
+        gap: 0.5rem;
+        padding: 0.7rem 0.5rem;
+    }
+    .logo {
+        width: 70px;
+        min-width: 50px;
+        margin-right: 0.5rem;
+    }
+    .theme-toggle {
+        margin-left: auto;
+        font-size: 1.1rem;
+        padding: 0.4rem;
+    }
+    .side-bar {
+        width: 80vw;
+        min-width: 140px;
+        max-width: 220px;
+        padding-top: 48px;
+    }
+    .sidebar-options {
+        gap: 0.5rem;
+        padding: 1rem 0.5rem;
+    }
+    #usuario-logado-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+        font-size: 0.98rem;
+        padding: 1rem 0.5rem 0.7rem 0.5rem !important;
+    }
+    .produtos-section {
+        margin: 1rem 0.3rem !important;
+        padding: 1rem !important;
+        min-height: 40vh;
+    }
+    .produtos-header h2,
+    h1 {
+        font-size: 1.1rem !important;
+    }
+    .produtos-table th, .produtos-table td {
+        padding: 0.4rem;
+        font-size: 0.95rem;
+    }
+    .footer {
+        font-size: 0.92rem;
+        padding: 1rem 0 0.5rem 0;
+    }
+}
+
+/* Tabela responsiva para dispositivos móveis */
+@media (max-width: 520px) {
+    .tabela-container {
+        /* Garante que a tabela role horizontalmente e não quebre para "display: block" */
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .produtos-table {
+        min-width: 600px; /* ou o valor mínimo necessário para não quebrar */
+        width: 100%;
+    }
+}
+
 .produtos-section {
     margin: 2rem 2rem 2rem 2rem; 
     background: #f0f4f8; 
@@ -311,4 +377,37 @@ body.dark-mode .footer {
 button:focus, .sidebar-btn:focus, .add-btn:focus, a:focus {
     outline: 2px solid #2563eb;
     outline-offset: 2px;
+}
+
+.dashboard-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.graficos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 100%;
+}
+
+.graficos-container > div {
+    flex: 1;
+    min-width: 320px;
+    max-width: 100%;
+}
+
+@media (max-width: 700px) {
+    .graficos-container {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+    .graficos-container > div {
+        min-width: 0;
+        width: 100%;
+    }
+    #dashboard-cards {
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
 }
