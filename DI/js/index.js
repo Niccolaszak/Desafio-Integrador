@@ -76,7 +76,12 @@ function renderTabelaLivros() {
             const confirmacao = confirm('Tem certeza que deseja remover este livro do estoque?');
             if (!confirmacao) return;
             let livros = JSON.parse(localStorage.getItem('livros')) || [];
+            const livroRemovido = livros.find(livro => livro.id === id);
             livros = livros.filter(livro => livro.id !== id);
+            registrarMovimentacao(
+                'Remoção',
+                `Livro removido: ${livroRemovido ? livroRemovido.titulo : 'ID ' + id}`
+            );
             localStorage.setItem('livros', JSON.stringify(livros));
             renderTabelaLivros();
         });
@@ -114,6 +119,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+function registrarMovimentacao(acao, detalhes) {
+    const usuario = localStorage.getItem('usuarioLogado') || 'Desconhecido';
+    const dataHora = new Date().toLocaleString('pt-BR');
+    const movimentos = JSON.parse(localStorage.getItem('movimentosEstoque')) || [];
+    movimentos.unshift({
+        dataHora,
+        usuario,
+        acao,
+        detalhes
+    });
+    localStorage.setItem('movimentosEstoque', JSON.stringify(movimentos));
+}
 
 
 

@@ -51,6 +51,10 @@ document.getElementById('form-add-livro').addEventListener('submit', function(e)
         if (confirmar) {
             livros[idxExistente].quantidade += quantidade;
             localStorage.setItem('livros', JSON.stringify(livros));
+            registrarMovimentacao(
+                'Adição',
+                `Adicionou ${quantidade} ao livro existente: ${livros[idxExistente].titulo} (ID: ${livros[idxExistente].id})`
+            );
             window.location.href = "index.html";
         }
         return;
@@ -75,8 +79,11 @@ document.getElementById('form-add-livro').addEventListener('submit', function(e)
         genero,
         quantidade
     });
-
     localStorage.setItem('livros', JSON.stringify(livros));
+    registrarMovimentacao(
+        'Adição',
+        `Livro adicionado: ${titulo} (ID: ${novoId})`
+    );
     window.location.href = "index.html";
 });
 
@@ -126,3 +133,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+function registrarMovimentacao(acao, detalhes) {
+    const usuario = localStorage.getItem('usuarioLogado') || 'Desconhecido';
+    const dataHora = new Date().toLocaleString('pt-BR');
+    const movimentos = JSON.parse(localStorage.getItem('movimentosEstoque')) || [];
+    movimentos.unshift({
+        dataHora,
+        usuario,
+        acao,
+        detalhes
+    });
+    localStorage.setItem('movimentosEstoque', JSON.stringify(movimentos));
+}

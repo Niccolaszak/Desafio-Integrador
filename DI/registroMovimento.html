@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estoque livros</title>
+    <title>Registro de Movimentação</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu lateral">
             <span class="bar"></span>
@@ -25,30 +24,27 @@
         <nav class="sidebar-options" aria-label="Navegação principal">
             <a href="index.html"><button class="sidebar-btn">Produtos</button></a>
             <a href="dashboard.html"><button class="sidebar-btn">Dashboard</button></a>
-            <a href="registroMovimento.html"><button class="sidebar-btn">Movimentações</button></a>
+            <a href="registroMovimento.html"><button class="sidebar-btn" aria-current="page">Movimentações</button></a>
         </nav>
     </section>
     <main>
-        <h1 style="margin: 0 0 0 1em; padding-top: 1em;">Estoque de Livros</h1>
-        <section class="produtos-section" aria-labelledby="estoque-titulo">
+        <h1 style="margin: 0 0 0 1em; padding-top: 1em;">Registro de Movimentações</h1>
+        <section class="produtos-section" aria-labelledby="registro-mov-titulo">
             <div class="produtos-header">
-                <h2 id="estoque-titulo">Livros em Estoque</h2>
-                <a href="addProduto.html"><button class="add-btn" id="add-livro-btn">Adicionar Livro</button></a>
+                <h2 id="registro-mov-titulo">Histórico de Alterações no Estoque</h2>
             </div>
             <div class="tabela-container">
                 <table class="produtos-table">
                     <thead>
                         <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Título</th>
-                            <th scope="col">Autor</th>
-                            <th scope="col">Gênero</th>
-                            <th scope="col">Quantidade</th>
-                            <th scope="col">Ações</th>
+                            <th>Data/Hora</th>
+                            <th>Usuário</th>
+                            <th>Ação</th>
+                            <th>Detalhes</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <!-- O conteúdo será inserido dinamicamente pelo JS -->
+                    <tbody id="movimentos-tbody">
+                        <!-- Registros serão inseridos aqui -->
                     </tbody>
                 </table>
             </div>
@@ -57,7 +53,7 @@
     <footer class="footer" role="contentinfo">
         &copy; 2025 Estoque de Livros. Todos os direitos reservados.
     </footer>
-
-    <script src="js/index.js"></script>
+    <script src="js/registroMovimento.js"></script>
+    
 </body>
 </html>

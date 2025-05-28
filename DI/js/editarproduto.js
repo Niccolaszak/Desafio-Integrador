@@ -59,12 +59,34 @@ document.getElementById('form-editar-livro').addEventListener('submit', function
         return;
     }
 
+    // Salva os valores antigos para comparação
+    const antigo = { ...livros[idx] };
+
+    // Atualiza com os novos valores
     livros[idx].titulo = this.titulo.value.trim();
     livros[idx].autor = this.autor.value.trim();
     livros[idx].genero = this.genero.value.trim();
     livros[idx].quantidade = parseInt(this.quantidade.value, 10);
 
     localStorage.setItem('livros', JSON.stringify(livros));
+
+    // Monta detalhes do que foi alterado
+    let detalhes = [];
+    if (antigo.titulo !== livros[idx].titulo)
+        detalhes.push(`Título: "${antigo.titulo}" → "${livros[idx].titulo}"`);
+    if (antigo.autor !== livros[idx].autor)
+        detalhes.push(`Autor: "${antigo.autor}" → "${livros[idx].autor}"`);
+    if (antigo.genero !== livros[idx].genero)
+        detalhes.push(`Gênero: "${antigo.genero}" → "${livros[idx].genero}"`);
+    if (antigo.quantidade !== livros[idx].quantidade)
+        detalhes.push(`Quantidade: ${antigo.quantidade} → ${livros[idx].quantidade}`);
+
+    registrarMovimentacao(
+        'Edição',
+        detalhes.length > 0
+            ? `Livro editado: ${livros[idx].titulo} (ID: ${livros[idx].id}). Alterações: ${detalhes.join('; ')}`
+            : `Livro editado: ${livros[idx].titulo} (ID: ${livros[idx].id}). Nenhuma alteração nos dados.`
+    );
     window.location.href = "index.html";
 });
 
@@ -114,3 +136,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+function registrarMovimentacao(acao, detalhes) {
+    const usuario = localStorage.getItem('usuarioLogado') || 'Desconhecido';
+    const dataHora = new Date().toLocaleString('pt-BR');
+    const movimentos = JSON.parse(localStorage.getItem('movimentosEstoque')) || [];
+    movimentos.unshift({
+        dataHora,
+        usuario,
+        acao,
+        detalhes
+    });
+    localStorage.setItem('movimentosEstoque', JSON.stringify(movimentos));
+}
