@@ -1,6 +1,8 @@
+// Seleciona o botão de alternância de tema e o body
 const toggleBtn = document.getElementById('theme-toggle');
 const body = document.body;
 
+// Função para alternar entre tema claro e escuro
 function setTheme(dark) {
     if (dark) {
         body.classList.add('dark-mode');
@@ -13,17 +15,20 @@ function setTheme(dark) {
     }
 }
 
+// Evento para alternar o tema ao clicar no botão
 toggleBtn.addEventListener('click', () => {
     const isDark = !body.classList.contains('dark-mode');
     setTheme(isDark);
 });
 
+// Aplica o tema salvo ao carregar a página e renderiza a tabela de livros
 window.addEventListener('DOMContentLoaded', () => {
     const temaSalvo = localStorage.getItem('tema');
     setTheme(temaSalvo === 'dark');
     renderTabelaLivros();
 });
 
+// Redireciona para login se não houver usuário logado
 if (!localStorage.getItem('usuarioLogado')) {
     window.location.href = "login.html";
 }
@@ -46,6 +51,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Função para renderizar a tabela de livros na página
 function renderTabelaLivros() {
     const tbody = document.querySelector('.produtos-table tbody');
     let livros = JSON.parse(localStorage.getItem('livros')) || [];
@@ -70,6 +76,7 @@ function renderTabelaLivros() {
 
     tbody.innerHTML = html;
 
+    // Adiciona eventos aos botões de remover
     document.querySelectorAll('.remove-btn').forEach(btn => {
         btn.addEventListener('click', function() {
             const id = Number(this.getAttribute('data-id'));
@@ -87,6 +94,7 @@ function renderTabelaLivros() {
         });
     });
 
+    // Adiciona eventos aos botões de editar
     document.querySelectorAll('.edit-btn').forEach(btn => {
         btn.addEventListener('click', function() {
             const id = this.getAttribute('data-id');
@@ -95,6 +103,7 @@ function renderTabelaLivros() {
     });
 }
 
+// Controle da sidebar (menu lateral)
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.getElementById('menu-toggle');
     const sidebar = document.getElementById('side-bar');
@@ -120,6 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Função para registrar movimentações no estoque
 function registrarMovimentacao(acao, detalhes) {
     const usuario = localStorage.getItem('usuarioLogado') || 'Desconhecido';
     const dataHora = new Date().toLocaleString('pt-BR');

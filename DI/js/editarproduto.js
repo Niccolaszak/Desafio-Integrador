@@ -1,6 +1,8 @@
+// Seleciona o botão de alternância de tema e o body
 const toggleBtn = document.getElementById('theme-toggle');
 const body = document.body;
 
+// Função para alternar entre tema claro e escuro
 function setTheme(dark) {
     if (dark) {
         body.classList.add('dark-mode');
@@ -13,22 +15,26 @@ function setTheme(dark) {
     }
 }
 
+// Evento para alternar o tema ao clicar no botão
 toggleBtn.addEventListener('click', () => {
     const isDark = !body.classList.contains('dark-mode');
     setTheme(isDark);
 });
 
+// Aplica o tema salvo ao carregar a página e carrega os dados do livro para edição
 window.addEventListener('DOMContentLoaded', () => {
     const temaSalvo = localStorage.getItem('tema');
     setTheme(temaSalvo === 'dark');
     carregarLivroParaEdicao();
 });
 
+// Função para obter o ID do livro a partir da URL
 function getIdFromUrl() {
     const params = new URLSearchParams(window.location.search);
     return Number(params.get('id'));
 }
 
+// Carrega os dados do livro selecionado para o formulário de edição
 function carregarLivroParaEdicao() {
     const id = getIdFromUrl();
     let livros = JSON.parse(localStorage.getItem('livros')) || [];
@@ -47,6 +53,7 @@ function carregarLivroParaEdicao() {
     form.quantidade.value = livro.quantidade;
 }
 
+// Evento de submit do formulário de edição de livro
 document.getElementById('form-editar-livro').addEventListener('submit', function(e) {
     e.preventDefault();
     const id = getIdFromUrl();
@@ -62,7 +69,7 @@ document.getElementById('form-editar-livro').addEventListener('submit', function
     // Salva os valores antigos para comparação
     const antigo = { ...livros[idx] };
 
-    // Atualiza com os novos valores
+    // Atualiza com os novos valores do formulário
     livros[idx].titulo = this.titulo.value.trim();
     livros[idx].autor = this.autor.value.trim();
     livros[idx].genero = this.genero.value.trim();
@@ -70,7 +77,7 @@ document.getElementById('form-editar-livro').addEventListener('submit', function
 
     localStorage.setItem('livros', JSON.stringify(livros));
 
-    // Monta detalhes do que foi alterado
+    // Monta detalhes do que foi alterado para registrar a movimentação
     let detalhes = [];
     if (antigo.titulo !== livros[idx].titulo)
         detalhes.push(`Título: "${antigo.titulo}" → "${livros[idx].titulo}"`);
@@ -90,6 +97,7 @@ document.getElementById('form-editar-livro').addEventListener('submit', function
     window.location.href = "index.html";
 });
 
+// Redireciona para login se não houver usuário logado
 if (!localStorage.getItem('usuarioLogado')) {
     window.location.href = "login.html";
 }
@@ -112,6 +120,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Controle da sidebar (menu lateral)
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.getElementById('menu-toggle');
     const sidebar = document.getElementById('side-bar');
@@ -137,6 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Função para registrar movimentações no estoque
 function registrarMovimentacao(acao, detalhes) {
     const usuario = localStorage.getItem('usuarioLogado') || 'Desconhecido';
     const dataHora = new Date().toLocaleString('pt-BR');

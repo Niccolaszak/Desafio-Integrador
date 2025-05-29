@@ -1,6 +1,8 @@
+// Controle do tema claro/escuro
 const toggleBtn = document.getElementById('theme-toggle');
 const body = document.body;
 
+// Função para alternar o tema
 function setTheme(dark) {
     if (dark) {
         body.classList.add('dark-mode');
@@ -13,17 +15,20 @@ function setTheme(dark) {
     }
 }
 
+// Evento para alternar tema ao clicar no botão
 toggleBtn.addEventListener('click', () => {
     const isDark = !body.classList.contains('dark-mode');
     setTheme(isDark);
 });
 
+// Aplica o tema salvo ao carregar a página e renderiza o dashboard
 window.addEventListener('DOMContentLoaded', () => {
     const temaSalvo = localStorage.getItem('tema');
     setTheme(temaSalvo === 'dark');
     renderDashboard();
 });
 
+// Redireciona para login se não houver usuário logado
 if (!localStorage.getItem('usuarioLogado')) {
     window.location.href = "login.html";
 }
@@ -46,6 +51,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Função principal para renderizar o dashboard
 function renderDashboard() {
     const livros = JSON.parse(localStorage.getItem('livros')) || [];
     const totalLivros = livros.length;
@@ -53,7 +59,7 @@ function renderDashboard() {
     const maiorEstoque = livros.reduce((max, l) => l.quantidade > (max?.quantidade || 0) ? l : max, null);
     const menorEstoque = livros.reduce((min, l) => l.quantidade < (min?.quantidade || Infinity) ? l : min, null);
 
-    // Cards
+    // Monta os cards de resumo
     const cards = [
         { label: "Livros cadastrados", value: totalLivros },
         { label: "Total em estoque", value: totalExemplares },
@@ -68,17 +74,17 @@ function renderDashboard() {
         </div>
     `).join('');
 
-    // Top 10 maiores estoques
+    // Top 7 maiores estoques
     const maiores = [...livros]
         .sort((a, b) => b.quantidade - a.quantidade)
         .slice(0, 7);
 
-    // Top 10 menores estoques
+    // Top 7 menores estoques
     const menores = [...livros]
         .sort((a, b) => a.quantidade - b.quantidade)
         .slice(0, 7);
 
-    // Gráfico dos 10 maiores estoques
+    // Gráfico dos 7 maiores estoques
     const ctxMaiores = document.getElementById('grafico-maiores').getContext('2d');
     new Chart(ctxMaiores, {
         type: 'bar',
@@ -101,7 +107,7 @@ function renderDashboard() {
         }
     });
 
-    // Gráfico dos 10 menores estoques
+    // Gráfico dos 7 menores estoques
     const ctxMenores = document.getElementById('grafico-menores').getContext('2d');
     new Chart(ctxMenores, {
         type: 'bar',
@@ -125,6 +131,7 @@ function renderDashboard() {
     });
 }
 
+// Função para quebrar títulos longos em duas linhas para o gráfico
 function quebraTitulo(titulo) {
     const limite = 30; // número de caracteres por linha
     if (titulo.length <= limite) return titulo;
@@ -134,6 +141,7 @@ function quebraTitulo(titulo) {
     return [titulo.slice(0, idx), titulo.slice(idx + 1)];
 }
 
+// Controle da sidebar (menu lateral)
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.getElementById('menu-toggle');
     const sidebar = document.getElementById('side-bar');
