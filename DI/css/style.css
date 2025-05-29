@@ -157,9 +157,9 @@ body.dark-mode .theme-toggle {
 }
 
 #logout-btn {
-    border:solid 1px #888;
+    border:solid 1px #f3f4f6;
     background-color:#1e293b;
-    color:#888;
+    color:#f3f4f6;
     cursor:pointer;
     font-size:0.92rem;
     text-decoration:none;
@@ -169,7 +169,7 @@ body.dark-mode .theme-toggle {
 }
 
 #logout-btn:hover, #logout-btn:focus{
-    background-color:#888;
+    background-color:#f3f4f6;
     color:#1e293b;
 }
 
@@ -320,19 +320,19 @@ body.dark-mode .produtos-section {
 }
 
 .produtos-table th {
-    background: #e5e7eb; /* cabeçalho mais escuro, mas claro */
+    background: #e5e7eb;
     font-weight: bold;
     color: #222;
     border-bottom: 1px solid #cbd5e1;
 }
 
 .produtos-table td {
-    background: #f8fafc; /* fundo das células claro */
+    background: #f8fafc;
     color: #222;
 }
 
 .produtos-table tbody tr {
-    border-bottom: 1px solid #cbd5e1; /* linha divisória suave */
+    border-bottom: 1px solid #cbd5e1;
 }
 
 body.dark-mode .produtos-table th {
@@ -383,9 +383,9 @@ body.dark-mode .produtos-table tbody tr {
 
 .footer {
     background-color: #1e293b;
-    color: #f0f4f8;
-    padding: 22px 20px 10px 220px; /* alinhado com a sidebar */
-    padding-left: 0 !important; /* Removido o preenchimento à esquerda */
+    color: #f3f4f6;
+    padding: 22px 20px 10px 220px;
+    padding-left: 0 !important; 
     text-align: center;
     font-size: 1rem;
     border-top: 1px solid #cbd5e1;
@@ -406,7 +406,7 @@ body.dark-mode .footer {
     border-top: 1px solid #33373d;
 }
 
-/* Foco visível para botões e links */
+/* Foco visível para botões e links Conforme Nivel AA da WCAG 2.1*/
 button:focus, .sidebar-btn:focus, .add-btn:focus, a:focus {
     outline: 2px solid #2563eb;
     outline-offset: 2px;
