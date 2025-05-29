@@ -193,12 +193,12 @@ body.dark-mode .theme-toggle {
     }
     .logo {
         width: 70px;
-        min-width: 50px;
+        min-width: 120px;
         margin-right: 0.5rem;
+
     }
     .theme-toggle {
-        margin-left: auto;
-        font-size: 1.1rem;
+        margin-right: auto;
         padding: 0.4rem;
     }
     .side-bar {
@@ -235,6 +235,7 @@ body.dark-mode .theme-toggle {
         font-size: 0.92rem;
         padding: 1rem 0 0.5rem 0;
     }
+    
 }
 
 /* Tabela responsiva para dispositivos móveis */
@@ -249,6 +250,17 @@ body.dark-mode .theme-toggle {
         width: 100%;
     }
 
+}
+
+.titulo-pg{
+    margin: 0 0 0 1em; padding-top: 2.75em;
+}
+
+@media (max-width: 620px) {
+    .titulo-pg {
+        margin: 0 0 0 0.5em;
+        padding-top: 4.75em;
+    }
 }
 
 .produtos-section {
@@ -433,29 +445,3 @@ button:focus, .sidebar-btn:focus, .add-btn:focus, a:focus {
     }
 }
 
-@media (max-width: 700px) {
-    .header {
-        padding: 0.7rem 0.2rem !important;
-    }
-    .produtos-section {
-        margin: 0.5rem 0.1rem;
-        padding: 0.7rem 0.2rem;
-        min-height: 75vh;
-    }
-    main {
-        padding: 0 !important;
-        margin: 30px !important;
-        width: 100vw !important;
-        box-sizing: border-box !important;
-        
-    }
-    body {
-        padding: 0 !important;
-    }
-    .footer {
-        padding: 10px 2px 6px 2px !important;
-        font-size: 0.92rem;
-        width: 100vw !important;
-        left: 0 !important;
-    }
-}
