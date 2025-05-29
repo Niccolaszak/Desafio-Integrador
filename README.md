@@ -46,6 +46,16 @@ O sistema foi desenvolvido seguindo as principais recomendações do padrão [WC
 
 Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-Desenvolvido por 
+Desenvolvido por:
 
+Nicolas Miguel Uczak
+📧Email: nicolasmiuczak@gmail.com
+Github: @Niccolaszak
 
+Alisson Eraldo Da Silva
+📧Email: alissoneraldo02102@gmail.com
+Github: @AlissonnSilva
+
+Vinicius Gabriel Buskievicz
+📧Email: viniciusbuskievicz01@gmail.com
+Github: @ViniciusBuskievicz
