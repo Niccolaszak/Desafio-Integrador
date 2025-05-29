@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <!-- Metadados essenciais para acessibilidade e responsividade -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Estoque de Livros</title>
+    <!-- Estilo específico da página de login -->
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
+    <!-- Header com a logo do sistema -->
     <header class="header">
         <img src="./Imagens/imgLogo.png" alt="Logo estante inteligente" class="logo">
     </header>
     <main>
+        <!-- Formulário de login -->
         <form id="login-form">
+            <!-- Campo para o nome de usuário -->
             <label for="usuario">
                 Usuário:
                 <input type="text" id="usuario" name="usuario" required autocomplete="username">
             </label>
+            <!-- Campo para a senha -->
             <label for="senha">
                 Senha:
                 <input type="password" id="senha" name="senha" required autocomplete="current-password">
             </label>
+            <!-- Botão para enviar o formulário -->
             <button type="submit" class="add-btn">Entrar</button>
+            <!-- Div para exibir mensagens de erro de login -->
             <div id="login-erro" role="alert"></div>
         </form>
     </main>
+    <!-- Rodapé da página -->
     <footer class="footer" role="contentinfo">
         &copy; 2025 Estoque de Livros. Todos os direitos reservados.
     </footer>
+    <!-- Script responsável pela lógica de autenticação -->
     <script src="js/login.js"></script>
 </body>
 </html>

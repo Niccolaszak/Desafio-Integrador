@@ -1,61 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <!-- Metadados essenciais para acessibilidade e responsividade -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Livro</title>
+    <!-- Estilos principais do projeto -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/addProduto.css">
 </head>
 <body>
-    <!-- Header -->
-     <header class="header">
+    <!-- Header fixo com menu, logo e botão de alternância de tema -->
+    <header class="header">
+        <!-- Botão para abrir o menu lateral (sidebar) -->
         <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu lateral">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </button>
+        <!-- Logo do sistema, clicável para voltar à página inicial -->
         <a href="index.html"><img src="./Imagens/imgLogo.png" alt="Logo estante inteligente" class="logo"></a>
+        <!-- Botão para alternar entre tema claro e escuro -->
         <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema claro/escuro">🌙</button>
     </header>
+
+    <!-- Sidebar lateral com informações do usuário e navegação -->
     <section class="side-bar" id="side-bar" aria-label="Menu lateral">
+        <!-- Exibe o nome do usuário logado e botão de logout -->
         <div id="usuario-logado-info" class="usuario-logado" style="padding: 1.5rem 1rem 1rem 1rem; border-bottom: 1px solid #374151;">
             <span id="usuario-logado-nome"></span>
             <button id="logout-btn">Sair</button>
         </div>
+        <!-- Navegação principal da sidebar -->
         <nav class="sidebar-options" aria-label="Navegação principal">
             <a href="index.html"><button class="sidebar-btn">Produtos</button></a>
             <a href="dashboard.html"><button class="sidebar-btn">Dashboard</button></a>
         </nav>
     </section>
+
+    <!-- Conteúdo principal da página -->
     <main>
+        <!-- Título principal da página -->
         <h1 class="titulo-pg">Adicionar Livro ao Estoque</h1>
+        <!-- Seção do formulário de cadastro de livro -->
         <section class="produtos-section" aria-labelledby="add-livro-titulo">
             <div class="produtos-titulo">
                 <h2 id="add-livro-titulo">Formulário de Cadastro</h2>
             </div>
+            <!-- Formulário para adicionar um novo livro ao estoque -->
             <form id="form-add-livro" autocomplete="off">
                 <div style="display: flex; flex-direction: column; gap: 1rem; max-width: 400px;">
+                    <!-- Campo para o título do livro -->
                     <label for="titulo">Título:
                         <input type="text" id="titulo" name="titulo" required>
                     </label>
+                    <!-- Campo para o autor do livro -->
                     <label for="autor">Autor:
                         <input type="text" id="autor" name="autor" required>
                     </label>
+                    <!-- Campo para o gênero do livro -->
                     <label for="genero">Gênero:
                         <input type="text" id="genero" name="genero" required>
                     </label>
+                    <!-- Campo para a quantidade em estoque -->
                     <label for="quantidade">Quantidade em estoque:
                         <input type="number" id="quantidade" name="quantidade" min="1" required>
                     </label>
+                    <!-- Botão para enviar o formulário -->
                     <button type="submit" class="add-btn">Adicionar Livro</button>
                 </div>
             </form>
         </section>
     </main>
+
+    <!-- Rodapé da página -->
     <footer class="footer" role="contentinfo">
         &copy; 2025 Estoque de Livros. Todos os direitos reservados.
     </footer>
+    <!-- Script principal da página para lógica de cadastro e interface -->
     <script src="js/addproduto.js"></script>
 </body>
 </html>

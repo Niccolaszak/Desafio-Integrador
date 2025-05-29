@@ -1,41 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <!-- Metadados essenciais para acessibilidade e responsividade -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <!-- Estilo principal do projeto -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-     <header class="header">
+    <!-- Header fixo com menu, logo e botão de alternância de tema -->
+    <header class="header">
+        <!-- Botão para abrir o menu lateral (sidebar) -->
         <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu lateral">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </button>
+        <!-- Logo do sistema, clicável para voltar à página inicial -->
         <a href="index.html"><img src="./Imagens/imgLogo.png" alt="Logo estante inteligente" class="logo"></a>
+        <!-- Botão para alternar entre tema claro e escuro -->
         <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema claro/escuro">🌙</button>
     </header>
+
+    <!-- Sidebar lateral com informações do usuário e navegação -->
     <section class="side-bar" id="side-bar" aria-label="Menu lateral">
+        <!-- Exibe o nome do usuário logado e botão de logout -->
         <div id="usuario-logado-info" class="usuario-logado" style="padding: 1.5rem 1rem 1rem 1rem; border-bottom: 1px solid #374151;">
             <span id="usuario-logado-nome"></span>
             <button id="logout-btn">Sair</button>
         </div>
+        <!-- Navegação principal da sidebar -->
         <nav class="sidebar-options" aria-label="Navegação principal">
             <a href="index.html"><button class="sidebar-btn">Produtos</button></a>
             <a href="dashboard.html"><button class="sidebar-btn">Dashboard</button></a>
             <a href="registroMovimento.html"><button class="sidebar-btn">Movimentações</button></a>
         </nav>
     </section>
+
+    <!-- Conteúdo principal da página -->
     <main>
+        <!-- Título principal da página -->
         <h1 class="titulo-pg">Dashboard do Estoque</h1>
+        <!-- Seção de indicadores e gráficos -->
         <section class="produtos-section" aria-labelledby="dashboard-titulo">
             <div class="produtos-header">
                 <h2 id="dashboard-titulo">Indicadores e Gráficos</h2>
             </div>
             <div class="dashboard-container">
+                <!-- Cards de resumo dos indicadores -->
                 <div id="dashboard-cards" style="display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem;"></div>
+                <!-- Card do maior estoque (opcional) -->
                 <div id="maior-estoque-card" style="margin-bottom:2rem;"></div>
+                <!-- Gráficos de maiores e menores estoques -->
                 <div class="graficos-container">
                     <div style="flex:1; min-width:320px;">
                         <h3 style="text-align:center;">Top 10 - Maior Estoque</h3>
@@ -49,9 +66,12 @@
             </div>
         </section>
     </main>
+
+    <!-- Rodapé da página -->
     <footer class="footer" role="contentinfo">
         &copy; 2025 Estoque de Livros. Todos os direitos reservados.
     </footer>
+    <!-- Bibliotecas e scripts necessários para os gráficos e dashboard -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/dashboard.js"></script>
 </body>
