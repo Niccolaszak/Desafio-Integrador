@@ -1,22 +1,25 @@
+/* Formulário de adição de produto */
 .produtos-section form {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    padding: 2rem;
+    background: #fff; /* Fundo branco */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Sombra leve */
+    padding: 2rem; /* Espaçamento interno */
     margin-top: 1rem;
-    max-width: 420px;
+    max-width: 420px; /* Largura máxima do formulário */
     margin-left: auto;
     margin-right: auto;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.5rem; /* Espaço entre os elementos */
 }
 
+/* Modo escuro para o formulário */
 body.dark-mode .produtos-section form {
     background: #1a1e24;
     color: #f0f4f8;
 }
 
+/* Labels do formulário */
 .produtos-section form label {
     display: flex;
     flex-direction: column;
@@ -25,6 +28,7 @@ body.dark-mode .produtos-section form {
     gap: 0.5rem;
 }
 
+/* Título do formulário */
 .produtos-titulo {
     font-size: 1.5rem;
     font-weight: 600;
@@ -33,14 +37,17 @@ body.dark-mode .produtos-section form {
     margin-bottom: 1rem;
 }
 
+/* Título no modo escuro */
 body.dark-mode .produtos-titulo{
     color: #2563eb;
 }
 
+/* Labels no modo escuro */
 body.dark-mode .produtos-section form label {
     color: #f0f4f8;
 }
 
+/* Campos de texto e número */
 .produtos-section form input[type="text"],
 .produtos-section form input[type="number"] {
     padding: 0.5rem;
@@ -52,6 +59,7 @@ body.dark-mode .produtos-section form label {
     transition: border 0.2s;
 }
 
+/* Campos no modo escuro */
 body.dark-mode .produtos-section form input[type="text"],
 body.dark-mode .produtos-section form input[type="number"] {
     background: #181a1b;
@@ -59,17 +67,20 @@ body.dark-mode .produtos-section form input[type="number"] {
     border: 1px solid #33373d;
 }
 
+/* Foco nos campos */
 .produtos-section form input[type="text"]:focus,
 .produtos-section form input[type="number"]:focus {
     border: 1.5px solid #2563eb;
     outline: none;
 }
 
+/* Botão de adicionar produto */
 .produtos-section form .add-btn {
     align-self: flex-end;
     margin-top: 1rem;
 }
 
+/* Responsividade */
 @media (max-width: 620px) {
     .produtos-section form {
         padding: 1rem;

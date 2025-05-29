@@ -1,4 +1,4 @@
-/* Reset básico */
+/* Reset e estrutura base */
 body, html {
     height: 100%;
     margin: 0;
@@ -9,17 +9,18 @@ body, html {
     color: #f3f4f6;
 }
 
+/* Header e logo */
 .header {
     text-align: center;
     padding: 2rem 0 1rem 0;
 }
-
 .header img.logo {
     max-width: 420px;
     margin: 0 auto;
     display: block;
 }
 
+/* Main centralizado */
 main {
     display: flex;
     justify-content: center;
@@ -29,6 +30,7 @@ main {
     box-sizing: border-box;
 }
 
+/* Formulário de login */
 #login-form {
     background: #23293a;
     border-radius: 18px;
@@ -45,6 +47,7 @@ main {
     box-sizing: border-box;
 }
 
+/* Labels do formulário */
 #login-form label {
     font-size: 1rem;
     color: #f3f4f6;
@@ -53,6 +56,7 @@ main {
     gap: 0.4rem;
 }
 
+/* Campos de entrada */
 #login-form input[type="text"],
 #login-form input[type="password"] {
     padding: 0.7rem 1rem;
@@ -64,6 +68,7 @@ main {
     transition: border 0.2s, background 0.2s;
 }
 
+/* Foco nos campos */
 #login-form input[type="text"]:focus,
 #login-form input[type="password"]:focus {
     border: 1.5px solid #60a5fa;
@@ -71,6 +76,7 @@ main {
     background: #23293a;
 }
 
+/* Botão de login */
 .add-btn {
     background: #2563eb;
     color: #fff;
@@ -83,11 +89,11 @@ main {
     transition: background 0.2s, box-shadow 0.2s;
     box-shadow: 0 2px 8px rgba(37,99,235,0.10);
 }
-
 .add-btn:hover, .add-btn:focus {
     background: #1746a2;
 }
 
+/* Mensagem de erro */
 #login-erro {
     color: #ef4444;
     font-size: 0.98rem;
@@ -96,6 +102,7 @@ main {
     display: none;
 }
 
+/* Footer */
 .footer {
     text-align: center;
     padding: 1.5rem 0 0.5rem 0;
@@ -110,6 +117,7 @@ main {
     background: transparent;
 }
 
+/* Responsividade */
 @media (max-width: 340px) {
     html, body, main {
         overflow-x: auto;
