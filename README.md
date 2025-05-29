@@ -56,14 +56,14 @@ Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICEN
 
 Desenvolvido por:
 
-Nicolas Miguel Uczak
+**Nicolas Miguel Uczak**
 📧Email: nicolasmiuczak@gmail.com
 Github: @Niccolaszak
 
-Alisson Eraldo Da Silva
+**Alisson Eraldo Da Silva**
 📧Email: alissoneraldo02102@gmail.com
 Github: @AlissonnSilva
 
-Vinicius Gabriel Buskievicz
+**Vinicius Gabriel Buskievicz**
 📧Email: viniciusbuskievicz01@gmail.com
 Github: @ViniciusBuskievicz
