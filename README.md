@@ -42,6 +42,14 @@ O sistema foi desenvolvido seguindo as principais recomendações do padrão [WC
 - **3.3.1 Identificação de Erros** – Mensagens de erro claras em formulários
 - **4.1.2 Nome, Função, Valor** – Uso de ARIA e semântica adequada
 
+## 💡 Tecnologias Utilizadas
+
+- **HTML5** – Estrutura semântica e acessível
+- **CSS3** – Design responsivo, temas claro/escuro, foco visível
+- **JavaScript** – Lógica de interface, manipulação de dados via LocalStorage
+- **LocalStorage** – Persistência de dados no navegador
+- **ARIA** – Recursos de acessibilidade para leitores de tela
+
 ## 📝 Licença
 
 Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
