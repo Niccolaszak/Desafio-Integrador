@@ -12,15 +12,23 @@ Este é um sistema web para **gestão de estoque de livros**, desenvolvido como 
 - **Tema claro/escuro** com alternância rápida
 - **Acessibilidade**: segue recomendações WCAG 2.1 AA
 
-## 🚀 Como usar
+## 🚀 Como acessar e utilizar
 
-1. **Clone o repositório:**
-   ```
-    git clone: https://github.com/Niccolaszak/Desafio-Integrador
-   ```
-2. **Abra a pasta no VS Code ou outro editor.**
-3. **Abra o arquivo "DI/index.html" em seu navegador.**
-   - Não é necessário servidor backend, tudo funciona localmente via LocalStorage.
+Você pode acessar o sistema diretamente pelo GitHub Pages, sem necessidade de instalação:
+
+👉 **Acesse aqui:** [https://niccolaszak.github.io/Desafio-Integrador/](https://niccolaszak.github.io/Desafio-Integrador/)
+
+### Passo a passo para utilizar
+
+1. **Acesse o site pelo link acima.**
+2. **Faça login** utilizando um dos usuários padrão (veja abaixo).
+3. Após o login, você será direcionado para a tela principal do sistema.
+4. **Adicione, edite ou remova livros** conforme necessário pelo menu lateral ou botões da interface.
+5. Utilize o **Dashboard** para visualizar indicadores e gráficos do estoque.
+6. Consulte o **Registro de Movimentações** para acompanhar o histórico de alterações.
+7. Para sair, clique no botão **Sair** no menu lateral.
+
+> **Observação:** Todos os dados são salvos localmente no navegador (LocalStorage). Não é necessário servidor backend.
 
 ## 👤 Usuários padrão para login
 
@@ -56,14 +64,14 @@ Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICEN
 
 Desenvolvido por:
 
-**Nicolas Miguel Uczak**
-📧Email: nicolasmiuczak@gmail.com
+**Nicolas Miguel Uczak**  
+📧Email: nicolasmiuczak@gmail.com  
 Github: @Niccolaszak
 
-**Alisson Eraldo Da Silva**
-📧Email: alissoneraldo02102@gmail.com
+**Alisson Eraldo Da Silva**  
+📧Email: alissoneraldo02102@gmail.com  
 Github: @AlissonnSilva
 
-**Vinicius Gabriel Buskievicz**
-📧Email: viniciusbuskievicz01@gmail.com
+**Vinicius Gabriel Buskievicz**  
+📧Email: viniciusbuskievicz01@gmail.com  
 Github: @ViniciusBuskievicz
