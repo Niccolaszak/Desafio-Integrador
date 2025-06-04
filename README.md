@@ -36,6 +36,10 @@ Você pode acessar o sistema diretamente pelo GitHub Pages, sem necessidade de i
 - **Usuario: alisson / Senha: alisson123**
 - **Usuario: vinicius / Senha: vinicius123**
 
+### Apresentação do Desafio Integrador
+
+-[Youtube](https://youtu.be/yqj-eerCQB0)
+
 ## ♿️ Acessibilidade (WCAG 2.1 AA)
 
 O sistema foi desenvolvido seguindo as principais recomendações do padrão [WCAG 2.1 AA], incluindo:
